@@ -2,7 +2,9 @@
 <html>
     <head>
         <title>RocketFirm</title>
-
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
         <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
 
         <link href="{{ asset('/css/rocket.css') }}" rel="stylesheet">
@@ -14,14 +16,14 @@
     <body>
         <div class="rocket-head">
            <div class="header container">
-                <div class="logo"></div>
+                <a href="/" class="logo"></a>
                 <div class="phone"><p>+7 727 272-09-71</p></div>
             </div>
             <div class="headline container">
-                <div class="hl-left col-md-offset-1 col-lg-offset-1 col-md-3 col-lg-3">
+                <div class="hl-left col-sm-offset-1 col-sm-3">
                     <h3>Депозит со ставкой</h3>
                 </div>
-                <div class="hl-center col-md-4 col-lg-4">
+                <div class="hl-center col-sm-4">
                     <h2>15,1</h2>
                     <div class="addon">
                         <span class="ampersant">*</span>
@@ -29,7 +31,7 @@
                     </div>
                     
                 </div>
-                <div class="hl-right col-md-3 col-lg-3">
+                <div class="hl-right col-sm-3">
                     <h3>это интересно, не так ли?</h3>
                 </div>
             </div> 
@@ -70,7 +72,7 @@
                     
                 </div>   
 
-                <div class="bill-block">
+                <div class="bill-block col-sm-offset-2 col-sm-8">
                     <div id="price-slider"></div>
                 </div>     
 
@@ -82,20 +84,20 @@
                     <div class="form-group">
                         <label class="col-sm-3">Имя</label>
                         <div class="col-sm-9">
-                            <input class="form-control">
+                            <input class="form-control form-name">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3">Фамилия</label>
                         <div class="col-sm-9">
-                            <input class="form-control">
+                            <input class="form-control form-surname">
                         </div>
                     </div>
                     <div class="form-group">
                         <label class="col-sm-3">Телефон</label>
                         <div class="col-sm-9">
                             <input class="form-control form-phone">
-                            <span class="form-phone-display"></span>
+                            <span class="form-phone-display">+7 ___ ___–__–__</span>
                         </div>
                     </div>
                 </div>
@@ -111,28 +113,28 @@
                 <h4>Дополнительные условия</h4>
 
                 <div class="row">
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Минимальная сумма депозита</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
                         </div>
                     </a>
 
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Срок депозита</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
                         </div>
                     </a>
 
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Могу ли я пополнять депозит?</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
                         </div>
                     </a>
 
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Могу ли я снимать деньги с депозита?</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
@@ -141,28 +143,28 @@
 
                 </div>
                 <div>
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Могу ли я переоформить депозит?</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
                         </div>
                     </a>
 
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Вклад застрахован?</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
                         </div>
                     </a>
 
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Какие документы необходимы?</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
                         </div>
                     </a>
 
-                    <a href="#" class="info-block col-md-3">
+                    <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Какие есть ограничения?</p>
                             <span>Да, вклад застрахован Казахстанским фондом гарантирования депозитов.</span>
@@ -228,15 +230,13 @@
                 snap: true
             });
 
-            function filter500( value, type ){
-                return value % 10000 ? 2 : 1;
-            }
+           
 
             $("#price-slider").noUiSlider_pips({
                 mode: 'values',
                 values: [15000, 85000, 195000],
                 density: 1,
-                filter: filter500,
+               
                 format: wNumb({
                     postfix: ' т'
                 })
@@ -251,21 +251,27 @@
                 var val = $('#price-slider').val();
                 val = parseInt(val.substring(0, val.length - 6));
                 var nominal, level;
+                var partial_offset = [1, 60, 120];
+            
+                
                 if(val>85){
                     nominal = (val-85)/10;
                     level = 2;
+                    partial_offset[2] = (nominal/11)*60+60;
                 }
                 else if(val>15){
                     nominal = (val-15)/10;
                     level = 1;
+                    partial_offset[1] = (nominal/7)*60;
                 }
                 else{
                     nominal = val/5;
                     level = 0;
+                    
                 }
 
-                $(".noUi-pips .noUi-value").css({color: '#ccc'});
-                $(".noUi-pips .noUi-value.rocket_pip_"+val).css({color: '#ef4323'});
+                $(".noUi-pips .noUi-value").removeClass('active');
+                $(".noUi-pips .noUi-value.rocket_pip_"+val).addClass('active');
 
 
 
@@ -275,7 +281,7 @@
                     var deg = Math.round((i*20+30)/jmid);
 
                     
-                    var layer_offset = -(i*60);
+                    var layer_offset = -(partial_offset[i]);
 
                     var x_offset = 40/Math.pow(2, i);
                     var y_offset = 1/Math.pow(2, i); 
@@ -321,7 +327,7 @@
 
 
             }
-
+            
             make_money_arc(2, 11);
 
 
@@ -360,34 +366,67 @@
             var input_mask_val = '+7 ___ ___–__–__';
             var mask_text = '';
 
-
-            $('.rocket-form .form-phone').keyup(function(e) {
-                // console.log('----', e,t);
-                if(String.fromCharCode(e.keyCode).match(/^[0-9_]+$/) || (e.keyCode == 8)){
-                    input_val = $('.rocket-form .form-phone').val();  
-                    if(input_val.length>10){
-                        $('.rocket-form .form-phone').val(input_val.substr(0,10));
-                    }
-
-                    mask_text = (pad('__________',input_val,false)+1).replace(/((?=.*?[1-9])[0-9()_]{3})((?=.*?[1-9])[0-9()_]{3})((?=.*?[1-9])[0-9()_]{2})((?=.*?[1-9])[0-9()_]{2})((?=.*?[1-9])[0-9()_])+$/, "+7 $1 $2-$3-$4-$5"); 
+            $('.rocket-form .form-control').keyup(function(e){
                 
-               
-                    if(mask_text.length>13){
-                        input_mask_val = mask_text.substr(0,16); 
-                        $('.rocket-form .form-phone-display').html(input_mask_val);
-                     } else{
+                if($(e.delegateTarget).hasClass('form-phone')){
+                    if(String.fromCharCode(e.keyCode).match(/^[0-9_]+$/) || (e.keyCode == 8)){
+                        input_val = $('.rocket-form .form-phone').val();  
+                        if(input_val.length>10){
+                            $('.rocket-form .form-phone').val(input_val.substr(0,10));
+                        }
+
+                        mask_text = (pad('__________',input_val,false)+1).replace(/((?=.*?[1-9])[0-9()_]{3})((?=.*?[1-9])[0-9()_]{3})((?=.*?[1-9])[0-9()_]{2})((?=.*?[1-9])[0-9()_]{2})((?=.*?[1-9])[0-9()_])+$/, "+7 $1 $2-$3-$4-$5"); 
+                    
+                   
+                        if(mask_text.length>13){
+                            input_mask_val = mask_text.substr(0,16); 
+                            $('.rocket-form .form-phone-display').html(input_mask_val);
+                         } else{
+                            $('.rocket-form .form-phone').val(input_val);
+                            $('.rocket-form .form-phone-display').html(input_mask_val);
+                         }
+                    }else{
                         $('.rocket-form .form-phone').val(input_val);
-                        $('.rocket-form .form-phone-display').html(input_mask_val);
-                     }
-                }else{
-                    $('.rocket-form .form-phone').val(input_val);
+                    }
                 }
-               
+                else{
+                    
+                }
+
+
+                if(($('.rocket-form .form-name').val().length>=2) && ($('.rocket-form .form-surname').val().length>=2) && (input_val.length==10)){
+                    $('.rocket-form .form-footer .btn').addClass('active');
+                }
+                else{
+                    $('.rocket-form .form-footer .btn').removeClass('active');
+                }
+
 
             });
+           
 
             $('.rocket-form .form-phone-display').click(function(){
                 $('.rocket-form .form-phone').focus();
+            });
+
+            $('.rocket-form .form-footer .btn').click(function(){
+                if($('.rocket-form .form-footer .btn').hasClass('active')){
+                    alert('Success, Want to see more, then hire me =)');
+                } else{
+                    if($('.rocket-form .form-name').val().length<2){
+                       $('.rocket-form .form-name').focus(); 
+                    }else if($('.rocket-form .form-surname').val().length<2){
+                        $('.rocket-form .form-surname').focus(); 
+                    }else if(input_val.length!=10){
+                        $('.rocket-form .form-phone').focus(); 
+                    }
+                }
+                
+            });
+
+            $('.rocket-additional .info-block').click(function(e){
+                e.preventDefault();
+                alert('Want to see more, then hire me =)');
             });
 
             $('.rocket-form .form-phone').change(function() {
