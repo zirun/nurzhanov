@@ -12,6 +12,8 @@
         <link href="{{ asset('/css/jquery.nouislider.min.css') }}" rel="stylesheet">
 
         <link href="{{ asset('/css/jquery.nouislider.pips.min.css') }}" rel="stylesheet">
+        <link rel="icon" href="favi-rocket.ico" type="image/x-icon" />
+        <link rel="icon" type="image/png" sizes="32x32" href="/rocket_res/favicon.png">
     </head>
     <body>
         <div class="rocket-head">
@@ -42,7 +44,7 @@
                 <div id="denomination-arc">
                     <div class="money-layer">
                         <div class="money money-bes"></div>
-                        <div class="money money-bes"></div>
+                        <div class="money money-bes" style="z-index:50"></div>
                         <div class="money money-bes"></div>
                     </div>
                     <div class="money-layer">
@@ -172,15 +174,17 @@
                     </a>
                 </div>
             </div>
+
         <div class="rocket-footer container">
             <p>© Rocket Deposit, 2011–2015</p>
+            <img id="money-load" src="/rocket_res/money_bes.png">
         </div>
 
 
     </body>
 
     <script type="text/javascript" src="/script/jquery.min.js"></script>
-     <script type="text/javascript" src="/script/jquery.nouislider.all.min.js"></script>
+    <script type="text/javascript" src="/script/jquery.nouislider.all.min.js"></script>
     <script type="text/javascript">
         $(function() {
             console.log('Rocket Deposit initializing ...');
@@ -188,63 +192,7 @@
             
 
             window.dlayer = [];
-            for(var i=0; i<$('#denomination-arc .money-layer').length; i++){
-               $('#denomination-arc .money-layer:nth-child('+(i+1)+')').css({'z-index': 40/Math.pow(2, i)}); 
-               window.dlayer[i] = $('#denomination-arc .money-layer:nth-child('+(i+1)+')').children(); 
-            }
-
-
-
-
-            $("#price-slider").noUiSlider({
-                start: 85000, 
-                range: {
-                    'min': 0,
-
-                    '5%': 5000,
-                    '10%': 10000,
-                    '15%': 15000,
-                    '20%': 25000,
-                    '25%': 35000, 
-                    '30%': 45000,
-                    '35%': 55000,
-                    '40%': 65000,
-                    '45%': 75000,
-
-                    '50%': 85000, 
-
-                    '54%': 95000,
-                    '58%': 105000,
-                    '62%': 115000,
-                    '66%': 125000,
-                    '70%': 135000,
-                    '74%': 145000,
-                    '78%': 155000,
-                    '82%': 165000,
-                    '86%': 175000,
-                    '90%': 185000,
-                    '94%': 195000,
-
-                    'max': 200000
-                },
-                snap: true
-            });
-
-           
-
-            $("#price-slider").noUiSlider_pips({
-                mode: 'values',
-                values: [15000, 85000, 195000],
-                density: 1,
-               
-                format: wNumb({
-                    postfix: ' т'
-                })
-            });
-
-            $(".noUi-pips .noUi-value:contains('15000 т')").addClass('rocket_pip_15');
-            $(".noUi-pips .noUi-value:contains('85000 т')").addClass('rocket_pip_85');
-            $(".noUi-pips .noUi-value:contains('195000 т')").addClass('rocket_pip_195');
+            
 
 
             function make_money_arc(){
@@ -289,6 +237,7 @@
                     var midmin = jmid-Math.floor(nominal/2);
                     var midmax = jmid+Math.floor(nominal/2);
 
+                    $(dlayer[0][1]).css({transform: 'rotate(0deg) translate(0px, 0px) scale(1)', 'z-index': '50'});
 
                     for(var j=0; j<jlen; j++){
                         if(i<level){  
@@ -322,33 +271,101 @@
                         }
                     }        
 
-                    $(dlayer[0][1]).css({transform: 'rotate(0deg) translate(0px, 0px) scale(1)', 'z-index': '50'});
+                    
                 }  
 
 
             }
-            
-            make_money_arc(2, 11);
 
+           
 
-            $('#price-slider').on({
-                slide: function(event, value){
-                    if (!(( value < 5000 ) || ( value > 195000 ))) {
-                       make_money_arc();
-                    }    
-                },
-                set: function(event, value){
-                    if ( value < 5000 ) {
-                        $(this).val(5000);
-                    } else if ( value > 195000 ) {
-                        $(this).val(195000);
-                    }
-                    make_money_arc();
-                },
-                change: function(){
-                    //$("#l-change").tShow(450);
+            $("#money-load").on('load', function() {
+               for(var i=0; i<$('#denomination-arc .money-layer').length; i++){
+                   $('#denomination-arc .money-layer:nth-child('+(i+1)+')').css({'z-index': 40/Math.pow(2, i)}); 
+                   window.dlayer[i] = $('#denomination-arc .money-layer:nth-child('+(i+1)+')').children(); 
                 }
+
+
+
+
+                $("#price-slider").noUiSlider({
+                    start: 85000, 
+                    range: {
+                        'min': 0,
+
+                        '5%': 5000,
+                        '10%': 10000,
+                        '15%': 15000,
+                        '20%': 25000,
+                        '25%': 35000, 
+                        '30%': 45000,
+                        '35%': 55000,
+                        '40%': 65000,
+                        '45%': 75000,
+
+                        '50%': 85000, 
+
+                        '54%': 95000,
+                        '58%': 105000,
+                        '62%': 115000,
+                        '66%': 125000,
+                        '70%': 135000,
+                        '74%': 145000,
+                        '78%': 155000,
+                        '82%': 165000,
+                        '86%': 175000,
+                        '90%': 185000,
+                        '94%': 195000,
+
+                        'max': 200000
+                    },
+                    snap: true
+                });
+
+               
+
+                $("#price-slider").noUiSlider_pips({
+                    mode: 'values',
+                    values: [15000, 85000, 195000],
+                    density: 1,
+                   
+                    format: wNumb({
+                        postfix: ' т'
+                    })
+                });
+
+                $(".noUi-pips .noUi-value:contains('15000 т')").addClass('rocket_pip_15');
+                $(".noUi-pips .noUi-value:contains('85000 т')").addClass('rocket_pip_85');
+                $(".noUi-pips .noUi-value:contains('195000 т')").addClass('rocket_pip_195'); 
+                make_money_arc(2, 11);
+
+                $('#price-slider').on({
+                    slide: function(event, value){
+                        if (!(( value < 5000 ) || ( value > 195000 ))) {
+                           make_money_arc();
+                        }    
+                    },
+                    set: function(event, value){
+                        if ( value < 5000 ) {
+                            $(this).val(5000);
+                        } else if ( value > 195000 ) {
+                            $(this).val(195000);
+                        }
+                        make_money_arc();
+                    },
+                    change: function(){
+                        //$("#l-change").tShow(450);
+                    }
+                });
+
+            }).each(function() {
+              if(this.complete) $(this).load();
             });
+            
+            
+
+
+           
 
             //+7 ___  ___–__–__
 
@@ -435,8 +452,6 @@
 
 
 
-
-            console.log(dlayer);
 
 
         });

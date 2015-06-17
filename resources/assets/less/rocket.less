@@ -283,6 +283,11 @@ html, body{
 
 }
 
+#money-load{
+	position: absolute;
+	opacity: 0;
+}
+
 #denomination-arc{
 	position: absolute;
 	top: 50%;
@@ -299,9 +304,7 @@ html, body{
 			display: block;
 			
 			// border: 1px solid #ef4323;
-			-webkit-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.6);
-			-moz-box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.6);
-			box-shadow: 0px 0px 2px 0px rgba(0,0,0,0.6);
+			
 
 			-webkit-transition: 1s ease-in-out;
 		    -moz-transition: 1s ease-in-out;
@@ -533,6 +536,10 @@ html, body{
 			height: 90px;
 			display: inline-block;
 		}
+		@media (min-width: @screen-md-min) {
+			height: 120px;
+			display: table;
+		}
 
 
 		.wrap{
@@ -599,4 +606,5 @@ html, body{
 .rocket-footer{
 	position: relative;
 	border-top:	1px solid #e5e5e5; 
+	margin-top: 30px;
 }

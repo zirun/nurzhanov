@@ -6433,6 +6433,10 @@ body {
     margin: 268px 0 20px 0;
   }
 }
+#money-load {
+  position: absolute;
+  opacity: 0;
+}
 #denomination-arc {
   position: absolute;
   top: 50%;
@@ -6450,7 +6454,6 @@ body {
 #denomination-arc .money-layer .money {
   position: absolute;
   display: block;
-  box-shadow: 0px 0px 2px 0px rgba(0, 0, 0, 0.6);
   transition: 1s ease-in-out;
 }
 #denomination-arc .money-layer .money-bes {
@@ -6633,6 +6636,12 @@ body {
     display: inline-block;
   }
 }
+@media (min-width: 992px) {
+  .rocket-additional .info-block {
+    height: 120px;
+    display: table;
+  }
+}
 .rocket-additional .info-block .wrap {
   padding: 5px 10px 5px 20px;
   display: table-cell;
@@ -6678,6 +6687,7 @@ body {
 .rocket-footer {
   position: relative;
   border-top: 1px solid #e5e5e5;
+  margin-top: 30px;
 }
 
 /*# sourceMappingURL=rocket.css.map */

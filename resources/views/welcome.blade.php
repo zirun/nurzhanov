@@ -2,61 +2,43 @@
 <html>
     <head>
         <title>Zhandos Nurzhanov</title>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link href='//fonts.googleapis.com/css?family=Lato:100,400,700' rel='stylesheet' type='text/css'>
 
-        <link href='//fonts.googleapis.com/css?family=Lato:100' rel='stylesheet' type='text/css'>
-
-        <style>
-            html, body {
-                height: 100%;
-            }
-
-            body {
-                margin: 0;
-                padding: 0;
-                width: 100%;
-                color: #B0BEC5;
-                display: table;
-                
-                font-weight: 100;
-                font-family: 'Lato';
-
-                background: rgba(255,255,255,0.9);
-                background: -moz-radial-gradient(center, ellipse cover, rgba(255,255,255,0.9) 0%, rgba(233,245,255,0.9) 100%);
-                background: -webkit-gradient(radial, center center, 0px, center center, 100%, color-stop(0%, rgba(255,255,255,0.9)), color-stop(100%, rgba(233,245,255,0.9)));
-                background: -webkit-radial-gradient(center, ellipse cover, rgba(255,255,255,0.9) 0%, rgba(233,245,255,0.9) 100%);
-                background: -o-radial-gradient(center, ellipse cover, rgba(255,255,255,0.9) 0%, rgba(233,245,255,0.9) 100%);
-                background: -ms-radial-gradient(center, ellipse cover, rgba(255,255,255,0.9) 0%, rgba(233,245,255,0.9) 100%);
-                background: radial-gradient(ellipse at center, rgba(255,255,255,0.9) 0%, rgba(233,245,255,0.9) 100%);
-                filter: progid:DXImageTransform.Microsoft.gradient( startColorstr='#ffffff', endColorstr='#e9f5ff', GradientType=1 );
-            }
-
-            .container {
-                text-align: center;
-                display: table-cell;
-                vertical-align: middle;
-            }
-
-            .content {
-                text-align: center;
-                display: inline-block;
-            }
-
-            .title {
-                font-size: 96px;
-                margin-bottom: 40px;
-            }
-
-            .quote {
-                font-size: 24px;
-            }
-        </style>
+        <link href="{{ asset('/css/app.css') }}" rel="stylesheet">
+        <link rel="icon" type="image/png" sizes="32x32" href="/favicon.png">
     </head>
     <body>
         <div class="container">
-            <div class="content">
-                <div class="title">Laravel 5</div>
-                <div class="quote">{{ Inspiring::quote() }}</div>
+            <div class="col-sm-5">
+                <div class="name-title">
+                    <h1>Zhandos Nurzhanov</h1>
+                    <h2>DESIGNER & SOFTWARE ENGINEER</h2>
+                </div>
+                <div class="socials">
+                    <a href="https://www.behance.net/zirun" target="_blank"><i class="icon-behance"></i></a>
+                    <a href="https://twitter.com/zirun741" target="_blank"><i class="icon-twitter"></i></a>
+                    <a href="https://www.facebook.com/nurzhandos" target="_blank"><i class="icon-facebook"></i></a>
+                    <a href="mailto:zirun741@gmail.com"><i class="icon-mail"></i></a>
+                </div>
+               
             </div>
+            <div class="col-sm-7">
+                <div class="about-info col-sm-6">
+                    <p>I live and work in Almaty, Kazakhstan. It is one of the most amazing cities in our 
+country, city of beauty and impressions.</p>
+                    <p>I love my work. And when I say it, I really mean it. Actually, it's easy to love what I 
+do, when I have passion for interfaces and for beauty which surrounds me.</p>
+                    <p>Got an interesting project? Need a designer with creative vision and non-standard 
+approach? Contact me!</p>
+                </div>
+            </div>
+            <div class="kmg"></div>
         </div>
+        <script type="text/javascript" src="/script/jquery.min.js"></script>
+        <script type="text/javascript">
+        </script>
     </body>
 </html>
