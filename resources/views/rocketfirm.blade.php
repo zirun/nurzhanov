@@ -144,7 +144,7 @@
                     </a>
 
                 </div>
-                <div>
+                <div class="row">
                     <a href="#" class="info-block col-sm-6 col-md-3">
                         <div class="wrap">
                             <p>Могу ли я переоформить депозит?</p>
@@ -188,13 +188,7 @@
     <script type="text/javascript">
         $(function() {
             console.log('Rocket Deposit initializing ...');
-
-            
-
-            window.dlayer = [];
-            
-
-
+            var dlayer = [];
             function make_money_arc(){
                 var val = $('#price-slider').val();
                 val = parseInt(val.substring(0, val.length - 6));
@@ -221,9 +215,7 @@
                 $(".noUi-pips .noUi-value").removeClass('active');
                 $(".noUi-pips .noUi-value.rocket_pip_"+val).addClass('active');
 
-
-
-              for(var i=0; i<dlayer.length; i++){
+                for(var i=0; i<dlayer.length; i++){
                     var jlen = dlayer[i].length;
                     var jmid = Math.floor(jlen/2)
                     var deg = Math.round((i*20+30)/jmid);
@@ -259,7 +251,6 @@
                         }
 
                         if((j>=midmin)&&(j<=midmax)&&(i<=level)){
-                            console.log('n-j', nominal, jmid, j)
                             if(!((Math.round(nominal/2)+jmid)==j)){
                                 $(dlayer[i][j]).css({
                                     transform: 'rotate('+((j-jmid)*deg)+'deg) translate('+(j-jmid)*x_offset+'px, '+(Math.abs((j-jmid)*y_offset)+layer_offset)+'px) scale('+(9-(i/3))/10+')', 
@@ -269,24 +260,18 @@
                                 }); 
                             }
                         }
-                    }        
-
-                    
+                    }            
                 }  
 
 
             }
 
-           
 
             $("#money-load").on('load', function() {
                for(var i=0; i<$('#denomination-arc .money-layer').length; i++){
                    $('#denomination-arc .money-layer:nth-child('+(i+1)+')').css({'z-index': 40/Math.pow(2, i)}); 
-                   window.dlayer[i] = $('#denomination-arc .money-layer:nth-child('+(i+1)+')').children(); 
+                   dlayer[i] = $('#denomination-arc .money-layer:nth-child('+(i+1)+')').children(); 
                 }
-
-
-
 
                 $("#price-slider").noUiSlider({
                     start: 85000, 
@@ -322,8 +307,6 @@
                     snap: true
                 });
 
-               
-
                 $("#price-slider").noUiSlider_pips({
                     mode: 'values',
                     values: [15000, 85000, 195000],
@@ -337,6 +320,7 @@
                 $(".noUi-pips .noUi-value:contains('15000 т')").addClass('rocket_pip_15');
                 $(".noUi-pips .noUi-value:contains('85000 т')").addClass('rocket_pip_85');
                 $(".noUi-pips .noUi-value:contains('195000 т')").addClass('rocket_pip_195'); 
+                
                 make_money_arc(2, 11);
 
                 $('#price-slider').on({
@@ -362,13 +346,6 @@
               if(this.complete) $(this).load();
             });
             
-            
-
-
-           
-
-            //+7 ___  ___–__–__
-
 
             function pad(pad, str, padLeft) {
               if (typeof str === 'undefined') 
@@ -383,8 +360,7 @@
             var input_mask_val = '+7 ___ ___–__–__';
             var mask_text = '';
 
-            $('.rocket-form .form-control').keyup(function(e){
-                
+            $('.rocket-form .form-control').keyup(function(e){    
                 if($(e.delegateTarget).hasClass('form-phone')){
                     if(String.fromCharCode(e.keyCode).match(/^[0-9_]+$/) || (e.keyCode == 8)){
                         input_val = $('.rocket-form .form-phone').val();  
@@ -417,8 +393,6 @@
                 else{
                     $('.rocket-form .form-footer .btn').removeClass('active');
                 }
-
-
             });
            
 
@@ -437,23 +411,13 @@
                     }else if(input_val.length!=10){
                         $('.rocket-form .form-phone').focus(); 
                     }
-                }
-                
+                }    
             });
 
             $('.rocket-additional .info-block').click(function(e){
                 e.preventDefault();
                 alert('Want to see more, then hire me =)');
             });
-
-            $('.rocket-form .form-phone').change(function() {
-                console.log(this);
-            });
-
-
-
-
-
         });
     </script>
 
