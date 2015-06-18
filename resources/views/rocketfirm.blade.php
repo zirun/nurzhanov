@@ -5,9 +5,14 @@
         <meta charset="utf-8">
         <meta http-equiv="X-UA-Compatible" content="IE=edge">
         <meta name="viewport" content="width=device-width, initial-scale=1">
-
+       
 
         <link href="{{ asset('/css/rocket.css') }}" rel="stylesheet">
+
+        <link href="{{ asset('/css/jquery.nouislider.min.css') }}" rel="stylesheet">
+
+        <link href="{{ asset('/css/jquery.nouislider.pips.min.css') }}" rel="stylesheet">
+       
         <link rel="icon" type="image/png" sizes="32x32" href="/rocket_res/favicon.png">
     </head>
     <body>
